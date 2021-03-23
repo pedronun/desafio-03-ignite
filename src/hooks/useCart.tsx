@@ -118,9 +118,9 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         return;
       }
 
-      const { data: stock } = await api.get<Stock>(`stock/${productId}`);
+      const { data } = await api.get<Stock>(`stock/${productId}`);
 
-      const getProductAmount = stock.amount;
+      const getProductAmount = data.amount;
       const outOfStock = amount > getProductAmount;
 
       if (outOfStock) {
