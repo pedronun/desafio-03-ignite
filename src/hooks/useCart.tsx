@@ -51,7 +51,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
             JSON.stringify([...cart, { ...product, amount: 1 }])
           );
 
-          toast("Adicionado");
+          toast.success("Adicionado ao carrinho");
           return;
         }
       }
@@ -75,7 +75,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
             JSON.stringify(increasesStock)
           );
 
-          toast("Adicionado");
+          toast.success("Adicionado ao carrinho");
           return;
         } else {
           toast.error("Quantidade solicitada fora de estoque");
